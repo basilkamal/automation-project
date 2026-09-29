@@ -9,9 +9,17 @@ public class LoginPage {
         this.driver = driver;
     }
 
-    public void login(String username, String password) {
+    public LoginPage enterUsername(String username) {
         driver.findElement(By.id("user-name")).sendKeys(username);
+        return this;
+    }
+
+    public LoginPage enterPassword(String password) {
         driver.findElement(By.id("password")).sendKeys(password);
+        return this;
+    }
+
+    public void clickLogin() {
         driver.findElement(By.id("login-button")).click();
     }
 }

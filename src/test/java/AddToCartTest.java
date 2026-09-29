@@ -8,8 +8,9 @@ public class AddToCartTest extends BaseTest {
     @Test(enabled = false)
     public void addSpecificProductToCart(){
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.login("standard_user", "secret_sauce");
-
+        loginPage.enterUsername("standard_user")
+                .enterPassword("secret_sauce")
+                .clickLogin();
         ProductsPage productsPage = new ProductsPage(driver);
         productsPage.addProductToCart("sauce-labs-backpack");
 
@@ -21,8 +22,9 @@ public class AddToCartTest extends BaseTest {
     @Test()
     public void addRandomProductToCart(){
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.login("standard_user", "secret_sauce");
-
+        loginPage.enterUsername("standard_user")
+                .enterPassword("secret_sauce")
+                .clickLogin();
         ProductsPage productsPage = new ProductsPage(driver);
         productsPage.addRandomProductToCart();
 

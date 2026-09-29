@@ -7,7 +7,9 @@ public class FirstTest extends BaseTest{
     @Test()
     public void LoginCridintial() {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.enterUsername("standard_user")
+                .enterPassword("secret_sauce")
+                .clickLogin();
 
         String currentUrl = driver.getCurrentUrl();
         Assert.assertTrue(currentUrl.contains("inventory.html"));
