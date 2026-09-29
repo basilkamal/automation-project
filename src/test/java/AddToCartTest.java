@@ -14,8 +14,9 @@ public class AddToCartTest extends BaseTest {
         ProductsPage productsPage = new ProductsPage(driver);
         productsPage.addProductToCart("sauce-labs-backpack");
 
-        WebElement cartElement = driver.findElement(By.className("shopping_cart_badge"));
-        String cartCount = cartElement.getText();
+        CartComponent cartComponent = new CartComponent(driver);
+        String cartCount = cartComponent.getCartCount();
+        System.out.println(cartCount);
         Assert.assertEquals(cartCount, "1");
     }
 
@@ -28,8 +29,9 @@ public class AddToCartTest extends BaseTest {
         ProductsPage productsPage = new ProductsPage(driver);
         productsPage.addRandomProductToCart();
 
-        WebElement cartElement = driver.findElement(By.className("shopping_cart_badge"));
-        String cartCount = cartElement.getText();
+        CartComponent cartComponent = new CartComponent(driver);
+        String cartCount = cartComponent.getCartCount();
+        System.out.println(cartCount);
         Assert.assertEquals(cartCount, "1");
     }
 }
