@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","146","deliberateFailureTest","AutomationSuite","2026-09-29","failed","2026-09-29","FirstTest","AllTests","FirstTest","deliberateFailureTest"
+"","521","addRandomProductToCart","AutomationSuite","2026-09-29","passed","2026-09-29","AddToCartTest","AllTests","AddToCartTest","addRandomProductToCart"
+"","452","LoginCridintial","AutomationSuite","2026-09-29","passed","2026-09-29","FirstTest","AllTests","FirstTest","LoginCridintial"
+"","0","addSpecificProductToCart","AutomationSuite","2026-09-29","unknown","2026-09-29","AddToCartTest","AllTests","AddToCartTest","addSpecificProductToCart"

@@ -1,9 +1,11 @@
-import org.openqa.selenium.By;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class FirstTest extends BaseTest{
+public class FirstTest extends BaseTest {
 
+    @Severity(SeverityLevel.CRITICAL)
     @Test()
     public void LoginCridintial() {
         LoginPage loginPage = new LoginPage(driver);
@@ -15,6 +17,8 @@ public class FirstTest extends BaseTest{
         Assert.assertTrue(currentUrl.contains("inventory.html"));
     }
 
-
-
+    @Test()
+    public void deliberateFailureTest() {
+        Assert.assertTrue(false, "This test is designed to fail to verify Allure screenshot attachment");
+    }
 }
