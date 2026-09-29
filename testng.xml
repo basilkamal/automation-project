@@ -2,6 +2,7 @@
 <suite name="AutomationSuite">
     <listeners>
         <listener class-name="RetryListener"/>
+        <listener class-name="ScreenshotListener"/>
     </listeners>
 
     <test name="AllTests">
