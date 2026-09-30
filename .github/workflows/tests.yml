@@ -28,6 +28,20 @@ jobs:
       - name: Run tests
         run: mvn test
 
+      - name: Create Allure Executor Info
+        run: |
+          mkdir -p allure-results
+          cat <<EOF > allure-results/executor.json
+          {
+            "name": "GitHub Actions",
+            "type": "github",
+            "buildOrder": ${{ github.run_number }},
+            "buildName": "Build #${{ github.run_number }}",
+            "buildUrl": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
+            "reportUrl": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          }
+          EOF
+
       - name: Upload Allure Results
         if: always()
         uses: actions/upload-artifact@v4
