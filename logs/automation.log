@@ -1,0 +1,12 @@
+2026-09-30 15:36:44 INFO  LoginPage - Entering username: standard_user
+2026-09-30 15:36:44 INFO  LoginPage - Entering password
+2026-09-30 15:36:44 INFO  LoginPage - Clicking login button
+2026-09-30 15:36:44 INFO  LoginPage - Login button clicked successfully
+2026-09-30 15:36:46 INFO  LoginPage - Entering username: locked_out_user
+2026-09-30 15:36:46 INFO  LoginPage - Entering password
+2026-09-30 15:36:46 INFO  LoginPage - Clicking login button
+2026-09-30 15:36:46 INFO  LoginPage - Login button clicked successfully
+2026-09-30 15:36:48 INFO  LoginPage - Entering username: standard_user
+2026-09-30 15:36:48 INFO  LoginPage - Entering password
+2026-09-30 15:36:48 INFO  LoginPage - Clicking login button
+2026-09-30 15:36:48 INFO  LoginPage - Login button clicked successfully

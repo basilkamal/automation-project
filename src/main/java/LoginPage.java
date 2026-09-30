@@ -1,3 +1,5 @@
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,6 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class LoginPage {
+
+    private static final Logger logger = LogManager.getLogger(LoginPage.class);
 
     WebDriver driver;
     WebDriverWait wait;
@@ -17,6 +21,7 @@ public class LoginPage {
 
     @Step("Enter username: {username}")
     public LoginPage enterUsername(String username) {
+        logger.info("Entering username: {}", username);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("user-name")));
         driver.findElement(By.id("user-name")).sendKeys(username);
         return this;
@@ -24,13 +29,16 @@ public class LoginPage {
 
     @Step("Enter password")
     public LoginPage enterPassword(String password) {
+        logger.info("Entering password");
         driver.findElement(By.id("password")).sendKeys(password);
         return this;
     }
 
     @Step("Click login button")
     public void clickLogin() {
+        logger.info("Clicking login button");
         wait.until(ExpectedConditions.elementToBeClickable(By.id("login-button")));
         driver.findElement(By.id("login-button")).click();
+        logger.info("Login button clicked successfully");
     }
 }
