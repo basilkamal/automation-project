@@ -1,5 +1,6 @@
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -17,8 +18,15 @@ public class FirstTest extends BaseTest {
         Assert.assertTrue(currentUrl.contains("inventory.html"));
     }
 
+    @Severity(SeverityLevel.NORMAL)
     @Test()
-    public void deliberateFailureTest() {
-        Assert.assertTrue(false, "This test is designed to fail to verify Allure screenshot attachment");
+    public void lockedOutUserCannotLogin() {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.enterUsername("locked_out_user")
+                .enterPassword("secret_sauce")
+                .clickLogin();
+
+        boolean errorDisplayed = driver.findElements(By.cssSelector("[data-test='error']")).size() > 0;
+        Assert.assertTrue(errorDisplayed, "Expected an error message for locked out user");
     }
 }
