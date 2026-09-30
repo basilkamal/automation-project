@@ -78,6 +78,22 @@
                     </argLine>
                 </configuration>
             </plugin>
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}"/org/aspectj/aspectjweaver/1.9.22/aspectjweaver-1.9.22.jar
+                    </argLine>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
